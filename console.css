@@ -1,0 +1,198 @@
+:root {
+    --bg-color: #300a24;
+    --text-color: #ffffff;
+    --prompt-color: #4caf50;
+    --suggestion-bg: #2c2c2c;
+    --suggestion-hover: #3c3c3c;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #000000;
+    color: var(--text-color);
+    font-family: 'Ubuntu Mono', 'Courier New', monospace;
+    margin: 0;
+    padding: 20px;
+    overflow: hidden;
+    line-height: 1.4;
+    font-size: 16px;
+    min-height: 100vh;
+}
+
+#console {
+    background: #300a24;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    height: calc(100vh - 40px);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    overflow: hidden;
+}
+
+#console-header {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 8px 16px;
+    border-radius: 8px 8px 0 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    -webkit-app-region: drag;
+}
+
+#output {
+    overflow-y: auto;
+    flex: 1;
+    padding: 20px;
+}
+
+.window-button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.close {
+    background: #ff5f56;
+}
+
+.minimize {
+    background: #ffbd2e;
+}
+
+.maximize {
+    background: #27c93f;
+}
+
+.output-line {
+    margin: 4px 0;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+}
+
+#input-container {
+    position: relative;
+}
+
+#input-line {
+    display: flex;
+    align-items: center;
+    padding: 4px 0;
+}
+
+#prompt {
+    color: var(--prompt-color);
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+}
+
+#prompt::before {
+    content: "➜";
+    margin-right: 8px;
+}
+
+#input {
+    background: none;
+    color: var(--text-color);
+    border: none;
+    outline: none;
+    width: 100%;
+    font-family: inherit;
+    font-size: 16px;
+}
+
+#suggestions {
+    position: absolute;
+    background: var(--suggestion-bg);
+    border-radius: 4px;
+    max-height: 200px;
+    overflow-y: auto;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+    display: none;
+    bottom: 100%;
+    left: 40px;
+    right: 0;
+    margin-bottom: 5px;
+}
+
+.suggestion {
+    padding: 8px 16px;
+    cursor: pointer;
+}
+
+.suggestion:hover {
+    background: var(--suggestion-hover);
+}
+
+.suggestion.selected {
+    background: var(--suggestion-hover);
+}
+
+.command {
+    color: #ff79c6;
+}
+
+.arg {
+    color: #50fa7b;
+}
+
+.error {
+    color: #ff5555;
+}
+
+.success {
+    color: #50fa7b;
+}
+
+.info {
+    color: #8be9fd;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+.cursor {
+    display: inline-block;
+    width: 8px;
+    height: 16px;
+    background: var(--text-color);
+    margin-left: 4px;
+    animation: blink 1s step-end infinite;
+}
+
+.ascii-art {
+    color: #50fa7b;
+    white-space: pre;
+    font-family: monospace;
+    margin: 10px 0;
+}
+
+/* css for global scrollbar minimalist */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1e1e1e;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #444;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* css for global scrollbar minimalist */

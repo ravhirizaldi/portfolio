@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Connected to Terminal</title>
+	<link rel="icon" href="https://cdn-icons-png.flaticon.com/512/1051/1051377.png" type="image/x-icon">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap">
+	<link rel="stylesheet" href="console.css">
+
+	<meta name="description" content="A portfolio terminal showcasing projects and skills.">
+	<meta name="keywords" content="portfolio, terminal, projects, skills, web development">
+	<meta name="author" content="Ravhi Rizaldi">
+	
+	<meta property="og:title" content="Portfolio Terminal">
+	<meta property="og:description" content="A portfolio terminal showcasing projects and skills.">
+</head>
+
+<body>
+	<div id="console">
+		<div id="console-header">
+			<span class="window-button close"></span>
+			<span class="window-button minimize"></span>
+			<span class="window-button maximize"></span>
+      <span style="margin-left: 20px; color: #fff;">Portfolio Terminal</span>
+	<span id="volume-button" style="margin-left: auto; cursor: pointer; color: #fff;">🔊</span>
+		</div>
+		<div id="output"></div>
+		<div id="input-container">
+			<div id="suggestions"></div>
+			<div id="input-line">
+				<span id="prompt">ravhi@192.168.1.1:~$</span>
+				<input type="text" id="input" autocomplete="off" autofocus />
+			</div>
+		</div>
+	</div>
+	<audio src="keyboard5-88069.mp3" id="key-sound"></audio>
+	<script src="console.js"></script>
+</body>
+
+</html>
